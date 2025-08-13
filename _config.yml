@@ -1,19 +1,4 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: MM
+title: Bengsky
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -21,7 +6,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 twitter_username: username
 github_username: username
-minimal_mistakes_skin: default
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
@@ -35,20 +20,6 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# Plugins (previously gems:)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -58,22 +29,13 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "Bengsky"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "CTF Writeup"
   links:
-    - label: "Website"
+    - label: "linkedin"
       icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://linkedin.com/in/bengsky"
 
 footer:
   links:
@@ -86,6 +48,7 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
+
 
 defaults:
   # _posts
@@ -113,3 +76,17 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+sidebar:
+  - title: "Title"
+    image: "/assets/images/your-image.jpg"
+    image_alt: "image"
+    text: "Some text here."
+  - title: "Another Title"
+    text: "More text here."
+    nav: sidebar-sample
+sass:
+  style: compressed
+assets:
+  css:
+    - /assets/css/main.scss

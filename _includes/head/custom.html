@@ -1,0 +1,89 @@
+<style>
+    @media (min-width: 80em) {
+      #main {
+        max-width: 1980px !important;
+      }
+    }
+    .code-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.code-header {
+  display: flex;
+  align-items: center;
+  background: #263238;
+  gap: 0.5rem;
+  padding: 0.4em 0.8em;
+  font-size: 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.code-dots {
+  display: flex;
+  gap: 6px;
+  margin-right: auto;
+}
+
+.code-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.code-dot.red { background: #ff5f56; }
+.code-dot.yellow { background: #ffbd2e; }
+.code-dot.green { background: #27c93f; }
+
+.collapsed {
+  display: none !important;
+}
+
+.code-toggle {
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: #888;
+  user-select: none;
+}
+.code-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4em 0.8em;
+  font-size: 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+}
+
+.code-copy {
+  margin-left: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: #666;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.code-copy:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.code-copy .copied::after {
+  content: "Copied!";
+  position: absolute;
+  right: 0.8em;
+  top: 100%;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #444;
+  white-space: nowrap;
+  margin-top: 4px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+
+  </style>

@@ -1,0 +1,61 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("div[class^='language-'][class*='highlighter-rouge']").forEach(function (codeBlock) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "code-wrapper";
+
+      const header = document.createElement("div");
+      header.className = "code-header";
+
+      const dots = document.createElement("div");
+      dots.className = "code-dots";
+      ["red", "yellow", "green"].forEach(color => {
+        const dot = document.createElement("div");
+        dot.className = `code-dot ${color}`;
+        dots.appendChild(dot);
+      });
+
+      const toggle = document.createElement("span");
+      toggle.className = "code-toggle";
+      toggle.textContent = "▼";
+
+      const copy = document.createElement("span");
+      copy.className = "code-copy";
+      copy.textContent = "📋";
+
+      header.appendChild(dots);
+      header.appendChild(copy);
+      header.appendChild(toggle);
+
+      // Body: the codeBlock content
+      const body = document.createElement("div");
+      body.className = "code-body";
+      body.appendChild(codeBlock.cloneNode(true)); // clone the code block inside body
+
+      wrapper.appendChild(header);
+      wrapper.appendChild(body);
+
+      // Replace original codeBlock with wrapper
+      codeBlock.parentNode.replaceChild(wrapper, codeBlock);
+
+      // Toggle logic
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("collapsed");
+        toggle.textContent = body.classList.contains("collapsed") ? "►" : "▼";
+      });
+
+      // Copy logic
+      copy.addEventListener("click", () => {
+        const text = body.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          copy.classList.add("copied");
+          copy.textContent = "Copied";
+          setTimeout(() => {
+            copy.classList.remove("copied");
+            copy.textContent = "📋";
+          }, 1200);
+        });
+      });
+    });
+  });
+</script>
